@@ -7,6 +7,7 @@ Static site built to mirror shipguy.com, focused on California, with the Ship Gu
 - `privacy.html`, `terms.html` — legal pages
 - `assets/logo.png` — logo
 - `functions/api/quote/[[path]].js` — Cloudflare Pages Function that proxies leads to BeRocker with this site's Lead Source key `6ad674b186b38`
+- `index.template.html` — source template (the `<!--PQ_EMBED-->` marker is where the widget is spliced in). Not needed on the server; safe to delete.
 
 ## Deploy (Cloudflare Pages)
 1. Create a Pages project and upload this folder (or connect a repo containing it).
@@ -22,3 +23,6 @@ Static site built to mirror shipguy.com, focused on California, with the Ship Gu
 
 ## Test after deploy
 Follow section 3 of the pricing-tool README: ZIP validation, Year→Make→Model loading, consent check, submit → price → booking redirect, and confirm the lead lands in BeRocker under **Thunder Car Logistics** (lead source id 42).
+
+## Location pages
+`/locations/<city>/` — 17 California city pages (Temecula, Santa Maria, El Cajon, San Mateo, Compton, Clovis, Los Angeles, San Diego, San Jose, San Francisco, Fresno, Sacramento, Long Beach, Oakland, Bakersfield, Anaheim, Stockton), each with its local phone (also used in that page's `PQ_CONFIG`), office address, Google Maps embed, ~1,000 words of unique copy, city FAQ, and FAQPage + LocalBusiness schema. `/locations/` is the index; `sitemap.xml` and `robots.txt` list everything.
